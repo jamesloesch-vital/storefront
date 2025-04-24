@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vital Protocol - Revolutionizing Health</title>
+    <link rel="stylesheet" href="footer.css">
+    <style>
+        /* Add smooth scrolling behavior */
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+
+        @font-face {
+            font-family: 'LT Superior';
+            src: url('fonts/lt_superior (1)/LTSuperior-Regular.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'LT Superior';
+            src: url('fonts/lt_superior (1)/LTSuperior-Medium.otf') format('opentype');
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'LT Superior', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-weight: 400; /* Default body weight */
+        }
+
+        :root {
+            --light: #E0D6C9;
+            --dark: #231F20;
+            --cream: #e6e0d8;
+        }
+
+        body {
+            background-color: var(--dark);
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 90%;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 75px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .logo {
+            height: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 80%;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links .dropdown-content a {
+            color: #000;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-btn {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 0.5rem;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: #000000;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f5f5f5;
+        }
+
+        .treat-me-btn {
+            background-color: #e6e0d8;
+            color: var(--dark);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .sign-in {
+            color: white;
+            text-decoration: none;
+        }
+
+        .hero {
+            min-height: 100vh;
+            background-color: var(--dark);
+            display: block;
+            padding: 150px 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.45;
+            z-index: 0.5;
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .hero-title {
+            font-size: 5.5rem;
+            font-weight: 500; /* Header weight */
+            color: #E0D6C9;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .hero-btn {
+            background: rgba(255, 255, 255, 0.4);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 3rem;
+            border-radius: 75px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.25rem;
+            transition: transform 0.2s;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .how-it-works {
+            background-color: #E0D6C9;
+            padding: 6rem 2rem;
+        }
+
+        .section-header {
+            max-width: 800px;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            font-weight: 500; /* Header weight */
+        }
+
+        .section-description {
+            font-size: 1.25rem;
+            color: #4a4a4a;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            padding: 2rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .step-number {
+            font-size: 2.5rem;
+            font-weight: bold; /* Keep bold for step numbers or change to 500? Keeping bold for now */
+            color: var(--dark);
+        }
+
+        .step-title {
+            font-size: 1.75rem;
+            color: var(--dark);
+            font-weight: 500; /* Header weight */
+        }
+
+        .step-description {
+            color: #4a4a4a;
+            line-height: 1.6;
+        }
+
+        .step-image {
+            margin-top: auto;
+            border-radius: 1.5rem;
+        }
+
+        .step-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 1.5rem;
+        }
+
+        .products {
+            background-color: #f5f5f5;
+            padding: 6rem 2rem;
+        }
+
+        .products-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .products-title {
+            font-size: 3.5rem;
+            color: var(--dark);
+            font-weight: 500; /* Header weight */
+        }
+
+        .products-title span {
+            font-weight: 300;
+        }
+
+        .view-all {
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            justify-content: center;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-decoration: none;
+            color: var(--dark);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            margin-bottom: 1.5rem;
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            background: #f8f8f8;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500; /* Header weight */
+        }
+
+        .product-description {
+            font-size: 0.875rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .products-footer {
+            text-align: center;
+        }
+
+        .explore-btn {
+            display: inline-block;
+            background-color: var(--yellow);
+            color: var(--dark);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s;
+        }
+
+        .explore-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .disclaimer {
+            font-size: 0.875rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .testimonials {
+            background-color: #4a4a4a;
+            padding: 6rem 2rem;
+            color: white;
+        }
+
+        .testimonial-slides {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            position: relative;
+        }
+
+        .testimonial-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 1rem;
+            width: 100%;
+            display: none;
+        }
+
+        .testimonial-slide.active {
+            display: flex;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .success-label {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .testimonial-name {
+            font-size: 4rem;
+            font-weight: 500; /* Header weight */
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .testimonial-quote {
+            font-size: 2rem;
+            line-height: 1.3;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .testimonial-text {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .patient-label {
+            font-size: 0.875rem;
+            opacity: 0.7;
+        }
+
+        .testimonial-media {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .testimonial-media img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .testimonial-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .nav-button {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 0.5rem;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .nav-button:hover {
+            opacity: 1;
+        }
+
+        .nav-dots {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .dot {
+            width: 2rem;
+            height: 0.25rem;
+            background-color: rgba(255, 255, 255, 0.3);
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .dot.active {
+            background-color: #E0D6C9;
+        }
+
+        .faq {
+            background-color: white;
+            padding: 6rem 2rem;
+        }
+
+        .faq .section-header {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .faq .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            border-bottom: 1px solid #eee;
+            padding: 1.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            text-align: left;
+            color: var(--dark);
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        .arrow-icon {
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 2rem;
+        }
+
+        .faq-question[aria-expanded="true"] .arrow-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            padding: 0 0;
+        }
+
+        .faq-question[aria-expanded="true"] + .faq-answer {
+            max-height: 300px;
+            padding: 1rem 0 2rem;
+        }
+
+        .faq-answer p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 1024px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .testimonial-slides {
+                flex-wrap: wrap;
+            }
+
+            .testimonial-slide {
+                flex: 1 1 calc(50% - 1rem);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .mobile-menu-toggle {
+                display: block;
+            }
+            .mobile-menu-close {
+                display: none;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 1.5rem;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                cursor: pointer;
+            }
+            .nav-links.active .mobile-menu-close {
+                display: block;
+            }
+            .nav-links {
+                display: block;
+                position: fixed;
+                top: 0;
+                height: 100vh;
+                overflow-y: auto;
+                right: 0;
+                width: 300px;
+                background: #231F20 !important;
+                background-color: #231F20 !important;
+                padding: 2rem 0 2rem 1rem;
+                padding-right: 0 !important;
+                margin-right: 0 !important;
+                margin-top: 0 !important;
+                transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+                transform: translateX(100%);
+                opacity: 0;
+                pointer-events: none;
+                z-index: 1000;
+                text-align: left;
+                border-top-left-radius: 20px !important;
+                border-bottom-left-radius: 20px !important;
+                border-top-right-radius: 0 !important;
+                border-bottom-right-radius: 0 !important;
+            }
+            .nav-links.active {
+                transform: translateX(0);
+                opacity: 1;
+                pointer-events: auto;
+                right: 0 !important;
+                overflow-y: hidden !important;
+                background: #231F20 !important;
+                background-color: #231F20 !important;
+                margin-right: -24px !important;
+            }
+            .logo {
+                height: 30px;
+            }
+            .nav-links > a, .nav-links .dropdown {
+                display: block !important;
+                margin: 0.5rem 0;
+            }
+            .hero-title {
+                font-size: 2.5rem;
+                font-weight: 300;
+            }
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            .hero-buttons {
+                flex-direction: column;
+            }
+            .hero-btn {
+                text-align: center;
+            }
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-title {
+                font-size: 2.5rem;
+            }
+            .how-it-works {
+                padding: 4rem 1rem;
+            }
+            .dropdown-btn {
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
+            .nav-links .dropdown-content {
+                position: static !important;
+                background: transparent !important;
+                background-color: transparent !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                padding: 0 !important;
+                display: block !important;
+            }
+            .nav-links .dropdown-content a {
+                color: #fff !important;
+                padding: 0.5rem 0;
+                display: block !important;
+            }
+            .protocols-submenu {
+                display: block;
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 100vh;
+                width: 300px;
+                background: #231F20 !important;
+                padding: 4rem 0 2rem 1rem;
+                transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+                transform: translateX(100%);
+                opacity: 0;
+                pointer-events: none;
+                z-index: 1100;
+                text-align: left;
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+            .protocols-submenu.active {
+                transform: translateX(0);
+                opacity: 1;
+                pointer-events: auto;
+            }
+            .protocols-submenu .back-btn {
+                background: none;
+                border: none;
+                color: white;
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+                cursor: pointer;
+            }
+            .protocols-submenu a {
+                display: block;
+                color: white;
+                text-decoration: none;
+                margin: 1rem 0;
+                font-size: 1.25rem;
+            }
+            .nav-links {
+                scrollbar-width: none;
+            }
+            .nav-links::-webkit-scrollbar {
+                display: none;
+            }
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+            }
+            .nav-get-started-btn {
+                order: 2;
+            }
+            .sign-in {
+                order: 1;
+            }
+            .nav-links a:not(.mobile-menu-close), .nav-links button:not(.mobile-menu-close), .nav-links .dropdown:not(.mobile-menu-close) {
+                text-align: left;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: relative;
+                height: 44px;
+                margin: 0;
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+            }
+            .protocols-dropdown {
+                padding-left: 0 !important;
+            }
+            .protocols-dropdown .protocols-btn {
+                padding-left: 1rem !important;
+            }
+            .nav-links a:not(.nav-get-started-btn)::after,
+            .nav-links button:not(.nav-get-started-btn):not(.mobile-menu-close)::after {
+                content: "›";
+                font-size: 1.2rem;
+                color: white;
+                position: absolute;
+                right: 1rem;
+                top: 50%;
+                transform: translateY(-50%);
+                line-height: 1;
+            }
+            .protocols-dropdown .protocols-btn::after {
+                right: 0rem !important;
+                top: 50% !important;
+                transform: translateY(-50%) !important;
+                position: absolute !important;
+            }
+            .protocols-dropdown .protocols-btn {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                height: 44px !important;
+                width: 100% !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                position: relative !important;
+            }
+            .nav-links > a, .nav-links .dropdown {
+                margin: 0 !important;
+            }
+            .nav-links > a + a, 
+            .nav-links > a + .dropdown, 
+            .nav-links > .dropdown + a, 
+            .nav-links > .dropdown + .dropdown {
+                margin-top: 0.5rem !important;
+            }
+            .hero {
+                position: relative !important;
+                background-color: transparent !important;
+            }
+            .hero-video-container {
+                position: absolute !important;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                width: calc(100% + 4rem) !important;
+                height: calc(100% + 182px) !important;
+                overflow: hidden !important;
+                z-index: -2 !important;
+            }
+            .hero-module-video {
+                position: absolute !important;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                min-width: 100% !important;
+                min-height: 100% !important;
+                object-fit: cover !important;
+                width: auto !important;
+                height: auto !important;
+                object-position: center center !important;
+            }
+            .hero-overlay-video {
+                position: absolute !important;
+                inset: 0 !important;
+                object-fit: cover !important;
+                opacity: 0.45 !important;
+                z-index: -1 !important;
+            }
+            .hero-text {
+                position: relative !important;
+                z-index: 1 !important;
+            }
+            .hero::after {
+                 content: "" !important;
+                 position: absolute !important;
+                 top: 0 !important;
+                 left: 0 !important;
+                 right: 0 !important;
+                 bottom: 0 !important;
+                 background: rgba(0, 0, 0, 0.3) !important;
+                 z-index: 0 !important;
+                 pointer-events: none !important;
+            }
+            .nav-links > .mobile-menu-close {
+                display: block !important;
+                position: absolute !important;
+                top: 10px !important;
+                right: 10px !important;
+                left: auto !important;
+                margin: 0 !important;
+                z-index: 1100 !important;
+                background: none !important;
+                border: none !important;
+                color: white !important;
+                font-size: 1.5rem !important;
+                cursor: pointer !important;
+            }
+            .nav-links a.nav-get-started-btn {
+                width: 70% !important;
+                margin: 1.5rem 0 1.5rem 1rem !important;
+                text-align: center !important;
+                display: flex !important;
+                justify-content: center !important;
+                padding: 0.5rem 0 !important;
+            }
+            
+            .nav-links a.nav-get-started-btn::after {
+                display: none !important;
+            }
+
+            .menu-header {
+                font-size: 1.75rem;
+                color: white;
+                padding: 1rem 0;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                font-weight: 500; /* Header weight */
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .products-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .products {
+                padding: 4rem 1rem;
+            }
+
+            .testimonial-slides {
+                flex-wrap: wrap;
+            }
+
+            .testimonial-slide {
+                flex: 1 1 calc(50% - 1rem);
+            }
+
+            .testimonial-name {
+                font-size: 2.5rem;
+            }
+
+            .testimonial-quote {
+                font-size: 1.25rem;
+            }
+
+            .nav-dots {
+                gap: 0.25rem;
+            }
+
+            .dot {
+                width: 1.5rem;
+            }
+
+            .faq {
+                padding: 4rem 1rem;
+            }
+
+            .faq-question {
+                font-size: 1.125rem;
+            }
+
+            .protocols-dropdown {
+                padding-left: 0 !important;
+            }
+            .protocols-dropdown .protocols-btn {
+                padding-left: 1rem !important;
+            }
+        }
+
+        .nav-get-started-btn {
+            background: rgba(255, 255, 255, 0.4);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            padding: 0.75rem 1.5rem;
+            border-radius: 75px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .nav-links a.nav-get-started-btn {
+            color: #fff;
+        }
+
+        .hero-video-container {
+            width: 90%;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%, 10%);
+            border-radius: 20px;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .hero-module-video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        #mens-treatments {
+            scroll-margin-top: 100px;
+        }
+
+        .mobile-menu-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+        }
+
+        @media (min-width: 769px) {
+            .navbar .mobile-menu-close {
+                display: none !important;
+            }
+            .mobile-menu-toggle {
+                display: none !important;
+            }
+            .menu-header {
+                display: none !important;
+            }
+        }
+
+        .hamburger {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: white;
+            position: relative;
+        }
+
+        .hamburger::before,
+        .hamburger::after {
+            content: '';
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: white;
+            position: absolute;
+            left: 0;
+        }
+
+        .hamburger::before {
+            top: -8px;
+        }
+
+        .hamburger::after {
+            top: 8px;
+        }
+
+        .mobile-menu-close {
+            left: auto !important;
+            right: 1rem !important;
+            top: 1rem !important;
+            position: absolute !important;
+            z-index: 1100;
+        }
+
+        .dropdown.protocols-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-btn.protocols-btn {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 0.5rem;
+        }
+
+        .dropdown-content.protocols-submenu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown:hover .dropdown-content.protocols-submenu {
+            display: block;
+        }
+
+        .dropdown-content.protocols-submenu a {
+            color: #000000;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content.protocols-submenu a:hover {
+            background-color: #f5f5f5;
+        }
+
+        .protocols-submenu {
+            display: block;
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 300px;
+            background: #231F20 !important;
+            padding: 4rem 0 2rem 1rem;
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+            transform: translateX(100%);
+            opacity: 0;
+            pointer-events: none;
+            z-index: 1100;
+            text-align: left;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        .protocols-submenu.active {
+            transform: translateX(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .protocols-submenu .back-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+        }
+        .protocols-submenu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin: 1rem 0;
+            font-size: 1.25rem;
+        }
+        .protocols-submenu .protocols-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .protocols-header {
+            font-size: 1.75rem;
+            color: white;
+            padding: 1rem 0;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-weight: 500; /* Header weight */
+            text-align: center;
+        }
+        @media (min-width: 769px) {
+            .mobile-menu-close {
+                display: none !important;
+            }
+        }
+
+        .menu-header {
+            font-size: 1.75rem;
+            color: white;
+            padding: 1rem 0;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 500; /* Header weight */
+            text-align: center;
+        }
+
+        .protocols-header {
+            font-size: 1.75rem;
+            color: white;
+            padding: 1rem 0;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-weight: 500; /* Header weight */
+            text-align: center;
+        }
+
+        .nav-links {
+            border-top-left-radius: 20px !important;
+            border-top-right-radius: 0 !important;
+        }
+
+        .protocols-submenu {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 0;
+        }
+
+        .mobile-menu-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+        }
+
+        .quiz-prompt {
+            text-align: center;
+            margin: 3rem 0 2rem;
+        }
+
+        .quiz-prompt p {
+            font-size: 1.125rem;
+            color: var(--dark);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .quiz-btn {
+            display: inline-block;
+            background: rgba(35, 31, 32, 0.8);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2.5rem;
+            border-radius: 75px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.125rem;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .quiz-btn:hover {
+            transform: translateY(-2px);
+            background: rgba(35, 31, 32, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/VP-light-mj4eWhuns1EQndL0c8Fgu1arxZQgnt.png" alt="Vital Protocol Logo">
+        </a>
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <div class="nav-links">
+            <button class="mobile-menu-close" aria-label="Close navigation">X</button>
+            <h2 class="menu-header">Menu</h2>
+            <div class="dropdown protocols-dropdown">
+                <button class="dropdown-btn protocols-btn">Protocols</button>
+            </div>
+            <a href="about.html">About</a>
+            <!-- <a href="blog.html">Blog</a> -->
+            <a href="https://vitalprotocol.portal.tellescope.com/" class="sign-in">Sign in</a>
+            <a href="https://business.tellescope.com/e/public/form?f=67dafce966a8d4381697c7eb&businessId=67ab79f02cadd94416b434bb&nextFormId=&publicIdentifier=&customTypeId=&orgIds=&skipMatch=false&autoStart=false&sessionId=&" class="nav-get-started-btn">Get started</a>
+        </div>
+    </nav>
+
+    <div class="protocols-submenu">
+        <button class="protocols-close-btn" aria-label="Close protocols menu">X</button>
+        <h2 class="protocols-header">Protocols</h2>
+        <a href="testosterone.html" class="submenu-link">TRT</a>
+        <a href="enclomiphene.html" class="submenu-link">Enclomiphene</a>
+        <a href="enclomiphene-tadalafil.html" class="submenu-link">Enclomiphene + Tadalafil</a>
+    </div>
+
+    <section class="hero">
+        <video autoplay muted loop playsinline class="hero-overlay-video">
+            <source src="assets/overlay.mp4" type="video/mp4">
+        </video>
+        <div class="hero-text">
+            <h1 class="hero-title">Men's health, revitalized</h1>
+            <p class="hero-subtitle">Get personalized, science-backed care for your health.</p>
+            <div class="hero-buttons">
+                <a href="#mens-treatments" class="hero-btn">Find my protocol</a>
+            </div>
+        </div>
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline class="hero-module-video">
+                <source src="assets/montage.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How it works</h2>
+                <p class="section-description">Vital Protocol makes receiving personalized care easy and convenient for every man</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <span class="step-number">1.</span>
+                    <h3 class="step-title">Choose your protocol</h3>
+                    <p class="step-description">From boosting testosterone to losing weight, we have you covered. Just fill out a short questionnaire to get started.</p>
+                    <div class="step-image">
+                        <img src="assets/molecules.jpg" alt="Image showing bubbles">
+                    </div>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">2.</span>
+                    <h3 class="step-title">Meet with a doctor</h3>
+                    <p class="step-description">Our doctors will review your questionnaire and create a custom protocol for you.</p>
+                    <div class="step-image">
+                        <img src="assets/telehealth.jpeg" alt="Man on phone">
+                    </div>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">3.</span>
+                    <h3 class="step-title">Start your protocol</h3>
+                    <p class="step-description">If approved, your protocol will be shipped to your door.</p>
+                    <div class="step-image">
+                        <img src="assets/mailing-box-mockup-featuring-a-solid-color-backdrop-2571-el1.jpeg" alt="Shipment box">
+                    </div>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">4.</span>
+                    <h3 class="step-title">Monitor and optimize</h3>
+                    <p class="step-description">After you start your protocol, you'll have regular check-ins with your doctor to monitor your progress and make adjustments as needed.</p>
+                    <div class="step-image">
+                        <img src="assets/2c85d35ed15a2e134033cd7934097537.jpeg" alt="Man running outdoors">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products">
+        <div class="container">
+            <div class="products-header">
+                <h2 class="products-title" id="mens-treatments">Our Protocols</h2>
+            </div>
+            
+            <div class="products-grid">
+                <a href="testosterone.html" class="product-card">
+                    <div class="product-image">
+                        <img src="assets/trt-product-beige.jpg" alt="Testosterone Treatment Products">
+                    </div>
+                    <h3 class="product-title">Testosterone Replacement Therapy</h3>
+                    <p class="product-description">Hormone-based testosterone replacement therapy, available in injectable, oral, and gel forms.</p>
+                </a>
+
+                <a href="weight-loss.html" class="product-card" style="display: none;">
+                    <div class="product-image">
+                        <img src="assets/semaglutide-product-beige.jpg" alt="Weight Loss Treatment Products">
+                    </div>
+                    <h3 class="product-title">Semaglutide</h3>
+                    <p class="product-description">Drop stubborn fat and improve your health with GLP-1 agonists.</p>
+                </a>
+
+                <a href="enclomiphene.html" class="product-card">
+                    <div class="product-image">
+                        <img src="assets/enclo-beige.jpg" alt="Longevity Treatment Products">
+                    </div>
+                    <h3 class="product-title">Enclomiphene</h3>
+                    <p class="product-description">Boost testosteorne naturally with a non-hormonal testosterone repalcement therapy alternative.</p>
+                </a>
+
+                <a href="enclomiphene-tadalafil.html" class="product-card">
+                    <div class="product-image">
+                        <img src="assets/enclo-tad-beige.jpg" alt="Sexual Health Treatment Products">
+                    </div>
+                    <h3 class="product-title">Enclomiphene + Tadalafil</h3>
+                    <p class="product-description">Tackle ED and boost sexual health with enclomiphene + tadalafil</p>
+                </a>
+
+                <a href="tirzepatide.html" class="product-card" style="display: none;">
+                    <div class="product-image">
+                        <img src="assets/tirzepatide-product-beige.jpg" alt="Tirzepatide Treatment Products">
+                    </div>
+                    <h3 class="product-title">Tirzepatide</h3>
+                    <p class="product-description">Advanced weight management with dual GIP and GLP-1 receptor activation</p>
+                </a>
+            </div>
+
+            <div class="products-footer">
+                <p class="disclaimer">Prescription products require an online consultation with a healthcare provider who will determine if a prescription is appropriate.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="testimonial-slides">
+                <div class="testimonial-slide active" data-slide="1">
+                    <div class="testimonial-content">
+                        <span class="success-label">Real Men, Real Results</span>
+                        <h2 class="testimonial-name">Sulaiman</h2>
+                        <blockquote class="testimonial-quote">
+                            "I tried Vital Protocol's enclomiphene + tadalafil treatment for two months and really noticed a difference. I felt calmer, more alert, and my libido and gym performance improved, along with a bit more energy. Overall, it was a great boost for both my mind and body."
+                        </blockquote>
+                        <p class="patient-label">Compensated Vital Protocol Patient</p>
+                    </div>
+                </div>
+                <div class="testimonial-slide" data-slide="2">
+                    <div class="testimonial-content">
+                        <span class="success-label">Real Men, Real Results</span>
+                        <h2 class="testimonial-name">Ryan</h2>
+                        <blockquote class="testimonial-quote">
+                            "I began using enclomiphene from Vital Protocol to help raise my testosterone levels, which were in the low 200s. After consistent use, my levels have increased to the high 800s, leading to noticeable improvements in energy, strength, and overall well-being. Unlike traditional TRT, enclomiphene supports natural testosterone production, making it a great alternative. So far, my experience has been positive, with significant benefits and no major downsides."
+                        </blockquote>
+                        <p class="patient-label">Compensated Vital Protocol Patient</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-nav">
+                <button class="nav-button prev" aria-label="Previous testimonial">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="nav-dots">
+                    <button class="dot active" aria-label="Testimonial 1" data-slide="1"></button>
+                    <button class="dot" aria-label="Testimonial 2" data-slide="2"></button>
+                </div>
+                <button class="nav-button next" aria-label="Next testimonial">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-list">
+                <button class="faq-question" aria-expanded="false">
+                    <span>How does the consultation process work?</span>
+                    <svg class="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Our consultation process is simple and convenient. After completing an online health assessment, you'll have a video consultation with a licensed physician who will review your symptoms, medical history, and lab results to create a personalized treatment plan.</p>
+                </div>
+
+                <button class="faq-question" aria-expanded="false">
+                    <span>What treatments do you offer?</span>
+                    <svg class="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>We offer a range of treatments for testosterone therapy, including non-hormonal options such as Enclomiphene and Enclomiphene + Tadalafil, as well as hormone-based treatements such as injectable, oral, and gel-based Testosterone Replacement Therapy (TRT). All treatments are prescribed by licensed physicians based on your individual needs and medical history.</p>
+                </div>
+
+                <button class="faq-question" aria-expanded="false">
+                    <span>How much does treatment cost?</span>
+                    <svg class="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Treatment costs vary depending on your specific needs and prescribed medications. We offer transparent pricing and flexible payment options. Your initial consultation includes a comprehensive review of your symptoms, lab work, and medical history.</p>
+                </div>
+
+                <button class="faq-question" aria-expanded="false">
+                    <span>Is my information secure and confidential?</span>
+                    <svg class="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes, we take your privacy seriously. All your medical information is protected by HIPAA-compliant security measures, and our platform uses state-of-the-art encryption to keep your data safe and confidential.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            var heroBtn = document.querySelector('.hero-btn');
+            if(heroBtn) {
+                heroBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var target = document.querySelector('#mens-treatments');
+                    var navHeight = document.querySelector('.navbar').offsetHeight;
+                    var offset = 20;
+                    var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight - offset;
+                    var startPosition = window.pageYOffset;
+                    var distance = targetPosition - startPosition;
+                    var duration = 400;
+                    var startTime = null;
+
+                    function animation(currentTime) {
+                        if (startTime === null) startTime = currentTime;
+                        var timeElapsed = currentTime - startTime;
+                        var run = ease(timeElapsed, startPosition, distance, duration);
+                        window.scrollTo(0, run);
+                        if (timeElapsed < duration) requestAnimationFrame(animation);
+                    }
+
+                    function ease(t, b, c, d) {
+                        return -c * (t/d) * ((t/d) - 2) + b;
+                    }
+
+                    startTime = performance.now();
+                    animation(startTime);
+                });
+            }
+
+            // Testimonial carousel functionality
+            const nextBtn = document.querySelector('.testimonial-nav .next');
+            const prevBtn = document.querySelector('.testimonial-nav .prev');
+            const dots = document.querySelectorAll('.testimonial-nav .dot');
+            const slides = document.querySelectorAll('.testimonial-slide');
+            let currentSlide = 0;
+
+            // Function to update displayed slide
+            function showSlide(index) {
+                // Hide all slides
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+                
+                // Remove active class from all dots
+                dots.forEach(dot => {
+                    dot.classList.remove('active');
+                });
+                
+                // Show the selected slide and activate corresponding dot
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                
+                currentSlide = index;
+            }
+
+            // Next button click
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    let newIndex = currentSlide + 1;
+                    if (newIndex >= slides.length) {
+                        newIndex = 0;
+                    }
+                    showSlide(newIndex);
+                });
+            }
+
+            // Previous button click
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    let newIndex = currentSlide - 1;
+                    if (newIndex < 0) {
+                        newIndex = slides.length - 1;
+                    }
+                    showSlide(newIndex);
+                });
+            }
+
+            // Dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showSlide(index);
+                });
+            });
+
+            // FAQ toggle functionality
+            document.querySelectorAll('.faq-question').forEach(button => {
+                button.addEventListener('click', () => {
+                    const expanded = button.getAttribute('aria-expanded') === 'true';
+                    button.setAttribute('aria-expanded', !expanded);
+                });
+            });
+
+            // Mobile menu functionality
+            var mobileToggle = document.querySelector('.mobile-menu-toggle');
+            var navLinks = document.querySelector('.nav-links');
+            if(mobileToggle && navLinks) {
+                mobileToggle.addEventListener('click', function(){
+                    navLinks.classList.toggle('active');
+                    if(navLinks.classList.contains('active')) {
+                        navLinks.style.overflowY = 'hidden';
+                        document.body.style.overflow = 'hidden';
+                        document.documentElement.style.overflow = 'hidden';
+                    } else {
+                        navLinks.style.overflowY = 'auto';
+                        document.body.style.overflow = '';
+                        document.documentElement.style.overflow = '';
+                    }
+                });
+            }
+            var mobileClose = document.querySelector('.mobile-menu-close');
+            if(mobileClose && navLinks) {
+                mobileClose.addEventListener('click', function(){
+                    navLinks.classList.remove('active');
+                    navLinks.style.overflowY = 'auto';
+                    document.body.style.overflow = '';
+                    document.documentElement.style.overflow = '';
+                });
+            }
+
+            var protocolsBtn = document.querySelector('.protocols-btn');
+            var protocolsSubmenu = document.querySelector('.protocols-submenu');
+            var navLinks = document.querySelector('.nav-links');
+            if (protocolsBtn && protocolsSubmenu && navLinks) {
+                protocolsBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    navLinks.classList.remove('active');
+                    navLinks.style.overflowY = 'auto';
+                    protocolsSubmenu.scrollTop = 0;
+                    protocolsSubmenu.classList.remove('active');
+                    protocolsSubmenu.classList.add('active');
+                    protocolsSubmenu.style.overflowY = 'hidden';
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+            var protocolsCloseBtn = document.querySelector('.protocols-submenu .protocols-close-btn');
+            if (protocolsCloseBtn && protocolsSubmenu) {
+                protocolsCloseBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    protocolsSubmenu.classList.remove('active');
+                    protocolsSubmenu.style.overflowY = 'auto';
+                    document.body.style.overflow = '';
+                });
+            }
+        });
+    </script>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/VP-light-mj4eWhuns1EQndL0c8Fgu1arxZQgnt.png" alt="Vital Protocol Logo">
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="https://vitalprotocol.portal.tellescope.com/">Patient Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <ul>
+                        <li><a href="medical-provider-faq.html">Medical Provider FAQ</a></li>
+                        <li><a href="https://openloophealth.com/telehealth-consent">Telehealth Consent</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="https://intercom.help/vital-protocol/en/">Help Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <p>Email: <a href="mailto:support@vitalprotocol.co">support@vitalprotocol.co</a></p>
+                <p>Support: (908) 280-5268</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

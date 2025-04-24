@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Vital Protocol</title>
+    <link rel="stylesheet" href="nav.css">
+    <style>
+        @font-face {
+            font-family: 'LT Superior';
+            src: url('fonts/lt_superior (1)/LTSuperior-Regular.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'LT Superior';
+            src: url('fonts/lt_superior (1)/LTSuperior-Medium.otf') format('opentype');
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'LT Superior', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #1a1a1a;
+    background-color: #ffffff;
+}
+
+/* Hero section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 150px 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+.subtitle {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
+    color: #666666;
+    position: relative;
+    transition: color 0.3s ease;
+}
+.subtitle:after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #1a1a1a;
+    transition: width 0.3s ease;
+}
+.subtitle:hover:after {
+    width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'LT Superior', sans-serif;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards 0.5s;
+}
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 2rem 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+.about {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+    background-color: #ffffff;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.subtitle {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
+    color: #fff;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.subtitle:after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #1a1a1a;
+    transition: width 0.3s ease;
+}
+
+.subtitle:hover:after {
+    width: 100%;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards 0.5s;
+}
+
+/* Mission section */
+.mission {
+    background-color: #E0D6C9;
+    padding: 6rem 2rem;
+}
+
+.mission-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.mission h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: #1a1a1a;
+    margin: 2rem auto;
+    opacity: 0.2;
+}
+
+.mission p {
+    font-size: clamp(1rem, 1.2vw, 1.25rem);
+    max-width: 780px;
+    margin: 0 auto;
+    line-height: 1.7;
+    color: #1a1a1a;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 2rem 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+
+    .mission {
+        padding: 4rem 1.5rem;
+    }
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 150px 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.subtitle {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
+    color: #666666;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.subtitle:after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #1a1a1a;
+    transition: width 0.3s ease;
+}
+
+.subtitle:hover:after {
+    width: 100%;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards 0.5s;
+}
+
+/* Mission section */
+.mission {
+    background-color: #E0D6C9;
+    padding: 6rem 2rem;
+}
+
+.mission-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.mission h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: #1a1a1a;
+    margin: 2rem auto;
+    opacity: 0.2;
+}
+
+.mission p {
+    font-size: clamp(1rem, 1.2vw, 1.25rem);
+    max-width: 780px;
+    margin: 0 auto;
+    line-height: 1.7;
+    color: #1a1a1a;
+}
+
+/* Values section */
+.values {
+    padding: 6rem 2rem;
+    background-color: #ffffff;
+}
+
+.values-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.values h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.value-card {
+    position: relative;
+    background-color: #f8f8f8; /* fallback color if no background image is set */
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+    padding: 2rem;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add overlay for background image */
+.value-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 1rem;
+    z-index: 0;
+}
+
+/* Ensure card content appears above the overlay */
+.value-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Update header and paragraph text styles within value cards */
+.value-card h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.value-card p {
+    color: #fff;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 2rem 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+
+    .mission {
+        padding: 4rem 1.5rem;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .value-card {
+        min-height: 150px;
+    }
+}
+
+.team {
+    padding: 6rem 2rem;
+    background-color: #ffffff;
+}
+
+.team-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+    text-align: center;
+}
+
+.team-grid {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.team-member {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.member-image {
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #f8f8f8;
+    border-radius: 0.5rem;
+    overflow: hidden; /* Add overflow hidden to contain the image */
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the area, maintaining aspect ratio */
+    display: block; /* Remove extra space below image */
+}
+
+.member-info {
+    text-align: left;
+}
+
+.member-info h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+}
+
+.member-title {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: #666666;
+    margin-bottom: 1rem;
+}
+
+.member-bio {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #1a1a1a;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+    .team-member {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .member-image {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .member-info {
+        text-align: center;
+    }
+}
+
+.hero-overlay-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    z-index: -1;
+}
+
+.hero-content h1 {
+    color: white;
+}
+
+/* Override subtitle color in hero content */
+.hero-content .subtitle {
+    color: #fff;
+}
+
+/* Update section headings to use 'STIXTwoText' font */
+/* .mission h2, */
+/* .values h2, */
+/* .team h2 { */
+    /* font-family: 'STIXTwoText', serif; */
+/* } */
+
+       /* Footer Styles */
+       footer {
+            background-color: #231F20;
+            padding: 3rem 2rem;
+            color: #fff;
+        }
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-logo img {
+            max-width: 150px;
+        }
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-column li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-column a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+        .footer-column a:hover {
+            color: #ccc;
+        }
+        .footer-contact p {
+            margin: 0.5rem 0;
+        }
+        .footer-contact a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/VP-light-mj4eWhuns1EQndL0c8Fgu1arxZQgnt.png" alt="Vital Protocol Logo">
+        </a>
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <div class="nav-links">
+            <button class="mobile-menu-close" aria-label="Close navigation">X</button>
+            <h2 class="menu-header">Menu</h2>
+            <div class="dropdown protocols-dropdown">
+                <button class="dropdown-btn protocols-btn">Protocols</button>
+            </div>
+            <a href="about.html">About</a>
+            <!-- <a href="blog.html">Blog</a> -->
+            <a href="https://vitalprotocol.portal.tellescope.com/" class="sign-in">Sign in</a>
+            <a href="https://business.tellescope.com/e/public/form?f=67dafce966a8d4381697c7eb&businessId=67ab79f02cadd94416b434bb&nextFormId=&publicIdentifier=&customTypeId=&orgIds=&skipMatch=false&autoStart=false&sessionId=&" class="nav-get-started-btn">Get started</a>
+        </div>
+    </nav>
+
+    <div class="protocols-submenu">
+        <button class="protocols-close-btn" aria-label="Close protocols menu">X</button>
+        <h2 class="protocols-header">Protocols</h2>
+        <a href="testosterone.html" class="submenu-link">TRT</a>
+        <a href="enclomiphene.html" class="submenu-link">Enclomiphene</a>
+        <a href="enclomiphene-tadalafil.html" class="submenu-link">Enclomiphene + Tadalafil</a>
+    </div>
+    
+    <main>
+        <section class="hero">
+            <video autoplay muted loop playsinline class="hero-overlay-video">
+                <source src="assets/overlay.mp4" type="video/mp4">
+            </video>
+            <div class="hero-content">
+                <span class="subtitle">ABOUT US</span>
+                <h1>Vital Protocol was created to help men get the most out of their health.</h1>
+            </div>
+        </section>
+
+        <section class="mission">
+            <div class="mission-content">
+                <h2>Our Mission</h2>
+                <div class="divider"></div>
+                <p>Our mission is to help men optimize their testosterone levels through evidence-based medical care and comprehensive hormone testing. We create collaborative partnerships with our patients, empowering them with lab insights and appropriate medical solutions, including enclomiphene for qualifying patients.</p>
+            </div>
+        </section>
+
+        <section class="values">
+            <div class="values-content">
+                <h2>Core Values</h2>
+                <div class="divider"></div>
+                <div class="values-grid">
+                    <div class="value-card" style="background-image: url('assets/microscope.jpg');">
+                        <h3>Evidence-Based Science</h3>
+                        <p>We believe in evidence-based medicine. We use the latest research and data to make decisions about your health.</p>
+                    </div>
+                    <div class="value-card" style="background-image: url('assets/doctor.jpg');">
+                        <h3>Exceptional care</h3>
+                        <p>We believe in providing exceptional care to our patients. We are not a one-time service provider. We are a team of doctors who are committed to helping you achieve your goals.</p>
+                    </div>
+                    <div class="value-card" style="background-image: url('assets/mountain.jpg');">
+                        <h3>Long-Term Relationships</h3>
+                        <p>We believe in building long-term relationships with our patients. We are not a one-time service provider. We are a team of doctors who are committed to helping you achieve your goals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team">
+            <div class="team-content">
+                <h2>Team</h2>
+                <div class="divider"></div>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="assets/james.jpg" alt="James Loesch">
+                        </div>
+                        <div class="member-info">
+                            <h3>James Loesch</h3>
+                            <span class="member-title">CEO & FOUNDER</span>
+                            <p class="member-bio">Hi, I'm James, CEO and founder of Vital Protocol. I started this company out of a genuine passion to help men like yourself get access to the best possible care for hormone therapy and health optimization. At Vital Protocol, we're dedicated to providing you with evidence-based, personalized treatment to help you feel your best as a man. As someone myself who is deeply invested in my own health and wellness, I created Vital Protocol to be the place that likeminded men go to get exceptonal care and outsatnding results. At the end of the day, your health is one of the few things in life that truly matters. My goal is to help you achieve peak health so that you can enjoy all of the other parts of life that matter, like your family, career, hobbies, and atheletic pursuits. Here's to great health!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+           <!-- Footer Section Start -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/VP-light-mj4eWhuns1EQndL0c8Fgu1arxZQgnt.png" alt="Vital Protocol Logo">
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="https://vitalprotocol.portal.tellescope.com/">Patient Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <ul>
+                        <li><a href="medical-provider-faq.html">Medical Provider FAQ</a></li>
+                        <li><a href="https://openloophealth.com/telehealth-consent">Telehealth Consent</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="help-center.html">Help Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <p>Email: <a href="mailto:support@vitalprotocol.co">support@vitalprotocol.co</a></p>
+                <p>Support: (908) 280-5268</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    </main>
+
+    <script>
+        // Mobile menu and protocols submenu functionality
+        document.addEventListener('DOMContentLoaded', function(){
+            var mobileToggle = document.querySelector('.mobile-menu-toggle');
+            var navLinks = document.querySelector('.nav-links');
+            var protocolsBtn = document.querySelector('.protocols-btn');
+            var protocolsSubmenu = document.querySelector('.protocols-submenu');
+            var mobileClose = document.querySelector('.mobile-menu-close');
+            var protocolsCloseBtn = document.querySelector('.protocols-submenu .protocols-close-btn');
+            
+            // Function to enable scrolling
+            function enableScrolling() {
+                document.body.style.overflow = '';
+                document.documentElement.style.overflow = '';
+            }
+            
+            // Function to disable scrolling
+            function disableScrolling() {
+                document.body.style.overflow = 'hidden';
+                document.documentElement.style.overflow = 'hidden';
+            }
+            
+            if(mobileToggle && navLinks) {
+                mobileToggle.addEventListener('click', function(){
+                    navLinks.classList.toggle('active');
+                    if(navLinks.classList.contains('active')) {
+                        // Force hidden overflow on both menu and body to prevent any scrolling
+                        navLinks.style.overflowY = 'hidden';
+                        disableScrolling();
+                    } else {
+                        // Restore scrolling when menu is closed
+                        navLinks.style.overflowY = 'auto';
+                        enableScrolling();
+                    }
+                });
+            }
+            
+            if(mobileClose && navLinks) {
+                mobileClose.addEventListener('click', function(){
+                    navLinks.classList.remove('active');
+                    // Restore scrolling when menu is closed via X button
+                    navLinks.style.overflowY = 'auto';
+                    enableScrolling();
+                });
+            }
+
+            // Protocols sub-menu toggling with refresh behavior
+            if (protocolsBtn && protocolsSubmenu && navLinks) {
+                protocolsBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Hide the main mobile menu and re-enable its overflow
+                    navLinks.classList.remove('active');
+                    navLinks.style.overflowY = 'auto';
+                    
+                    // Refresh protocols submenu: reset scroll and force reflow
+                    protocolsSubmenu.scrollTop = 0;
+                    protocolsSubmenu.classList.remove('active');
+                    void protocolsSubmenu.offsetWidth; // Force reflow
+                    protocolsSubmenu.classList.add('active');
+                    
+                    // Disable scrolling when submenu is open
+                    disableScrolling();
+                });
+            }
+            
+            if (protocolsCloseBtn && protocolsSubmenu) {
+                protocolsCloseBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    protocolsSubmenu.classList.remove('active');
+                    
+                    // Ensure scrolling is re-enabled
+                    enableScrolling();
+                });
+            }
+            
+            // Add click event listener to the document to close menus when clicking outside
+            document.addEventListener('click', function(e) {
+                // Check if click is outside the nav-links and protocols-submenu
+                if (navLinks && !navLinks.contains(e.target) && 
+                    !mobileToggle.contains(e.target) && 
+                    navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    enableScrolling();
+                }
+                
+                if (protocolsSubmenu && !protocolsSubmenu.contains(e.target) && 
+                    protocolsBtn && !protocolsBtn.contains(e.target) && 
+                    protocolsSubmenu.classList.contains('active')) {
+                    protocolsSubmenu.classList.remove('active');
+                    enableScrolling();
+                }
+            });
+            
+            // Also reset body overflow on page load, just in case
+            enableScrolling();
+        });
+    </script>
+</body>
+</html>

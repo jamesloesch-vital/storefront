@@ -1,0 +1,441 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'LT Superior', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background: #F9F7F3;
+    color: #111;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 150px 20px;
+}
+
+.product-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.product-images {
+    position: sticky;
+    top: 40px;
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+.product-info {
+    padding-top: 20px;
+}
+
+.product-subtitle {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.product-title {
+    font-family: 'LT Superior', serif;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.product-description {
+    font-weight: 400;
+    font-size: 1.125rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.benefits {
+    display: grid;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.benefit-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.pricing-card {
+    width: 100%;
+    padding: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.pricing-label {
+    font-size: 0.875rem;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.pricing-amount {
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: #000;
+}
+
+.cta-button {
+    width: 100%;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 40px;
+    transition: background-color 0.2s;
+}
+
+.cta-button:hover {
+    background: #333;
+}
+
+.faq-section {
+    border-top: 1px solid #e0e0e0;
+    padding: 20px 0;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+}
+
+.faq-answer {
+    margin-top: 16px;
+    display: none;
+    color: #666;
+}
+
+.faq-answer.active {
+    display: block;
+}
+
+.safety-info {
+    margin-top: 40px;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.safety-info a {
+    color: #000;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .product-layout {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .product-images {
+        position: static;
+    }
+}
+
+.science-section {
+    margin-top: 60px;
+    padding-top: 60px;
+    border-top: 1px solid #e0e0e0;
+    background-color: #E0D6C9;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.science-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.science-header h2 {
+    font-family: 'LT Superior', serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+}
+
+.science-link {
+    color: #000;
+    text-decoration: none;
+    font-size: 0.875rem;
+    border-bottom: 1px solid #000;
+}
+
+.science-content {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 40px;
+}
+
+.ingredients-table {
+    display: grid;
+    gap: 30px;
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 20px;
+}
+
+.table-header {
+    font-weight: 500;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    color: #666;
+}
+
+.pill {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #f5f5f5;
+    border-radius: 16px;
+    font-size: 0.875rem;
+}
+
+.ingredient-details ul {
+    list-style: none;
+    margin-bottom: 16px;
+}
+
+.ingredient-details li {
+    position: relative;
+    padding-left: 12px;
+    margin-bottom: 8px;
+}
+
+.ingredient-details li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+}
+
+.learn-more {
+    color: #000;
+    text-decoration: none;
+    font-size: 0.875rem;
+    border-bottom: 1px solid #000;
+}
+
+.drug-facts {
+    padding: 20px;
+    background: #E5DFD5;
+    color: #000;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.drug-facts h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 16px;
+    color: #000;
+}
+
+.facts-grid {
+    display: grid;
+    gap: 12px;
+}
+
+.fact-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    font-size: 0.875rem;
+}
+
+.fact-label {
+    color: #000;
+}
+
+.facts-footnote {
+    margin-top: 16px;
+    font-size: 0.75rem;
+    color: #000;
+}
+
+.facts-footnote a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+}
+
+sup {
+    font-size: 0.75em;
+    line-height: 0;
+}
+
+@media (max-width: 768px) {
+    .science-content {
+        grid-template-columns: 1fr;
+    }
+
+    .table-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .science-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+}
+
+.divider {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border-top: 1px solid #e0e0e0;
+    width: 100%;
+}
+
+.benefits-section {
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+}
+
+.benefits-header {
+    font-family: 'LT Superior', serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    margin-bottom: 40px;
+}
+
+.benefit-card {
+    width: 100%;
+    background: #E0D6C9 !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+.benefit-text {
+    flex: 1 1 auto;
+}
+
+.benefit-text h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #000 !important;
+}
+
+.benefit-text p {
+    margin: 0;
+    font-size: 1rem;
+    color: #000 !important;
+}
+
+.benefit-image {
+    flex: 0 0 auto;
+    margin-left: 20px;
+}
+
+.benefit-image img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Updated FAQ Section Custom Styles */
+.faq .container {
+    padding-top: 0;
+}
+
+.faq .section-title {
+    font-family: 'LT Superior', serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.faq .faq-question {
+    font-size: 1.25rem;
+    text-align: left;
+    padding: 15px 20px;
+    margin: 15px 0;
+}
+
+.faq .faq-answer {
+    max-width: 600px;
+    margin: 15px 0;
+    text-align: left;
+    padding: 0 20px;
+}
+
+/* Reset FAQ section top margin */
+section.faq {
+    margin-top: 40px;
+}
+
+.no-bottom-padding {
+    padding-bottom: 0;
+}
+
+.benefit-card-override {
+    background: #E0D6C9 !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    color: #000 !important;
+}
+
+.benefit-card-override h3,
+.benefit-card-override p {
+    color: #000 !important;
+}

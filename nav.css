@@ -1,0 +1,476 @@
+/* Navbar Component Styles */
+
+/* Base navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 90%;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 75px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: rgba(26, 26, 26, 0.7);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+/* Logo styles */
+.logo {
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 80%;
+    width: auto;
+}
+
+/* Nav links */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Dropdown menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    padding: 0.5rem 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #000000;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f5f5f5;
+}
+
+.nav-links .dropdown-content a {
+    color: #000;
+}
+
+/* Get Started Button */
+.nav-get-started-btn {
+    background: rgba(255, 255, 255, 0.4);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 0.75rem 1.5rem;
+    border-radius: 75px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: transform 0.2s;
+}
+
+.nav-links a.nav-get-started-btn {
+    color: #fff;
+}
+
+/* Sign in link */
+.sign-in {
+    color: white;
+    text-decoration: none;
+}
+
+/* Mobile menu elements */
+.mobile-menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    position: absolute;
+    left: 0;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+.mobile-menu-close {
+    left: auto !important;
+    right: 1rem !important;
+    top: 1rem !important;
+    position: absolute !important;
+    z-index: 1100;
+}
+
+/* Menu & Protocols Headers */
+.menu-header {
+    font-family: 'STIXTwoText', serif;
+    font-size: 1.75rem;
+    font-weight: 300;
+    color: white;
+    padding: 1rem 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.protocols-header {
+    font-family: 'STIXTwoText', serif;
+    font-size: 1.75rem;
+    font-weight: 300;
+    color: white;
+    padding: 1rem 0;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Protocols Submenu */
+.protocols-submenu {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 300px;
+    background: #231F20 !important;
+    padding: 4rem 0 2rem 1rem;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1100;
+    text-align: left;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.protocols-submenu.active {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.protocols-submenu .back-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.protocols-submenu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 1rem 0;
+    font-size: 1.25rem;
+}
+
+.protocols-submenu .protocols-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Desktop view styles */
+@media (min-width: 769px) {
+    .navbar .mobile-menu-close {
+        display: none !important;
+    }
+    .mobile-menu-toggle {
+        display: none !important;
+    }
+    .menu-header {
+        display: none !important;
+    }
+}
+
+/* Mobile/tablet view styles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        height: 30px;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .mobile-menu-close {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        cursor: pointer;
+    }
+    
+    .nav-links.active .mobile-menu-close {
+        display: block;
+    }
+    
+    .nav-links {
+        display: block;
+        position: fixed;
+        top: 0;
+        height: 100vh;
+        overflow-y: auto;
+        right: 0;
+        width: 300px;
+        background: #231F20 !important;
+        background-color: #231F20 !important;
+        padding: 2rem 0 2rem 1rem;
+        padding-right: 0 !important;
+        margin-right: 0 !important;
+        margin-top: 0 !important;
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        transform: translateX(100%);
+        opacity: 0;
+        pointer-events: none;
+        z-index: 1000;
+        text-align: left;
+        border-top-left-radius: 20px !important;
+        border-bottom-left-radius: 20px !important;
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        scrollbar-width: none; /* Firefox */
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .nav-links::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+    
+    .nav-links.active {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+        right: 0 !important;
+        overflow-y: hidden !important; /* Disable scrolling within menu when active */
+        background: #231F20 !important;
+        background-color: #231F20 !important;
+        margin-right: -24px !important;
+    }
+    
+    .nav-links > a, .nav-links .dropdown {
+        display: block !important;
+        margin: 0.5rem 0;
+    }
+    
+    .dropdown-btn {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+    
+    .nav-links .dropdown-content {
+        position: static !important;
+        background: transparent !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+    
+    .nav-links .dropdown-content a {
+        color: #fff !important;
+        padding: 0.5rem 0;
+        display: block !important;
+    }
+    
+    /* Mobile nav links ordering and appearance */
+    .nav-get-started-btn {
+        order: 2;
+    }
+    
+    .sign-in {
+        order: 1;
+    }
+    
+    .nav-links a:not(.mobile-menu-close), 
+    .nav-links button:not(.mobile-menu-close), 
+    .nav-links .dropdown:not(.mobile-menu-close) {
+        text-align: left;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        height: 44px; /* Set consistent height for all menu items */
+        margin: 0; /* Remove margin to ensure consistent spacing */
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+    
+    .nav-links a:not(.nav-get-started-btn)::after,
+    .nav-links button:not(.nav-get-started-btn):not(.mobile-menu-close)::after {
+        content: "›";
+        font-size: 1.2rem;
+        color: white;
+        position: absolute;
+        right: 1rem;
+        top: 50%; /* Center vertically */
+        transform: translateY(-50%); /* Perfect vertical centering */
+        line-height: 1; /* Ensure consistent height of the arrow itself */
+    }
+    
+    /* Protocols dropdown specific styling */
+    .protocols-dropdown {
+        padding-left: 0 !important;
+    }
+    
+    .protocols-dropdown .protocols-btn {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        height: 44px !important;
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        position: relative !important;
+    }
+    
+    .protocols-dropdown .protocols-btn::after {
+        right: 0rem !important; /* Slightly adjusted position to align with others */
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        position: absolute !important;
+    }
+    
+    /* Override any other styles that might affect vertical alignment */
+    .nav-links > a, .nav-links .dropdown {
+        margin: 0 !important; /* Override any margins that might cause misalignment */
+    }
+    
+    /* Add some vertical spacing between menu items */
+    .nav-links > a + a, 
+    .nav-links > a + .dropdown, 
+    .nav-links > .dropdown + a, 
+    .nav-links > .dropdown + .dropdown {
+        margin-top: 0.5rem !important;
+    }
+    
+    .nav-links > .mobile-menu-close {
+        display: block !important;
+        position: absolute !important;
+        top: 10px !important;
+        right: 10px !important;
+        left: auto !important;
+        margin: 0 !important;
+        z-index: 1100 !important;
+        background: none !important;
+        border: none !important;
+        color: white !important;
+        font-size: 1.5rem !important;
+        cursor: pointer !important;
+    }
+    
+    /* Get started button in mobile menu */
+    .nav-links a.nav-get-started-btn {
+        width: 70% !important; /* Make button less wide */
+        margin: 1.5rem 0 1.5rem 1rem !important; /* Left align with other menu items, add vertical spacing */
+        text-align: center !important; /* Center text inside button */
+        display: flex !important;
+        justify-content: center !important; /* Center text inside button */
+        padding: 0.5rem 0 !important; /* Reset padding to ensure proper vertical alignment */
+    }
+    
+    /* Remove the carrot arrow from the Get started button */
+    .nav-links a.nav-get-started-btn::after {
+        display: none !important;
+    }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 640px) {
+    .protocols-dropdown {
+        padding-left: 0 !important;
+    }
+    .protocols-dropdown .protocols-btn {
+        padding-left: 1rem !important;
+    }
+}
+
+/* Ensure no top space or padding in both mobile menus */
+.nav-links {
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 0 !important;
+}
+
+.protocols-submenu {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 0;
+}

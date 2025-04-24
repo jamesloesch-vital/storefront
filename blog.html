@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="footer.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 120px auto 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .category-btn {
+            padding: 0.75rem 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 75px;
+            color: #fff;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: transform 0.2s, background-color 0.3s;
+            cursor: pointer;
+        }
+        .category-btn:hover {
+            transform: translateY(-2px);
+        }
+        .category-btn.active {
+            background: rgba(26, 26, 26, 0.6);
+        }
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .blog-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .blog-card-content {
+            padding: 20px;
+        }
+        .blog-card h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+        }
+        .blog-card p {
+            margin: 0 0 10px 0;
+            color: #666;
+            font-size: 0.9em;
+        }
+        .blog-card .meta {
+            display: flex;
+            justify-content: space-between;
+            color: #999;
+            font-size: 0.8em;
+        }
+
+        .blog-page-title {
+            font-family: 'STIX Two Text', serif;
+            font-weight: 400;
+            font-size: 3.5rem;
+            color: #231F20;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/VP-light-mj4eWhuns1EQndL0c8Fgu1arxZQgnt.png" alt="Vital Protocol Logo">
+        </a>
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <div class="nav-links">
+            <button class="mobile-menu-close" aria-label="Close navigation">X</button>
+            <h2 class="menu-header">Menu</h2>
+            <div class="dropdown protocols-dropdown">
+                <button class="dropdown-btn protocols-btn">Protocols</button>
+            </div>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="/treatment" class="nav-get-started-btn">Get started</a>
+            <a href="/signin" class="sign-in">Sign in</a>
+        </div>
+    </nav>
+
+    <div class="protocols-submenu">
+        <button class="protocols-close-btn" aria-label="Close protocols menu">X</button>
+        <h2 class="protocols-header">Protocols</h2>
+        <a href="testosterone.html" class="submenu-link">TRT</a>
+        <a href="enclomiphene.html" class="submenu-link">Enclomiphene</a>
+        <a href="weight-loss.html" class="submenu-link">GLP-1</a>
+        <a href="enclomiphene-tadalafil.html" class="submenu-link">Enclomiphene + Tadalafil</a>
+    </div>
+
+    <div class="container">
+        <h1 class="blog-page-title">Men's Health Insights</h1>
+        <div class="categories">
+            <button class="category-btn active" data-category="all">All</button>
+            <button class="category-btn" data-category="Fitness">Fitness</button>
+            <button class="category-btn" data-category="Nutrition">Nutrition</button>
+            <button class="category-btn" data-category="Sleep">Sleep</button>
+            <button class="category-btn" data-category="Weight Management">Weight Loss</button>
+            <button class="category-btn" data-category="Testosterone Replacement">TRT</button>
+            <button class="category-btn" data-category="Sexual Health">Sexual Health</button>
+            <button class="category-btn" data-category="Mental Health">Mental Health</button>
+        </div>
+        <div class="blog-posts" id="blogPosts">
+            <!-- Blog posts will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <!-- Load the Contentful SDK script -->
+    <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+    
+    <!-- Load the external JavaScript file -->
+    <script src="blog.js"></script>
+    
+    <script>
+        // Mobile menu and protocols submenu functionality
+        document.addEventListener('DOMContentLoaded', function(){
+            var mobileToggle = document.querySelector('.mobile-menu-toggle');
+            var navLinks = document.querySelector('.nav-links');
+            var protocolsBtn = document.querySelector('.protocols-btn');
+            var protocolsSubmenu = document.querySelector('.protocols-submenu');
+            var mobileClose = document.querySelector('.mobile-menu-close');
+            var protocolsCloseBtn = document.querySelector('.protocols-submenu .protocols-close-btn');
+            
+            // Function to enable scrolling
+            function enableScrolling() {
+                document.body.style.overflow = '';
+                document.documentElement.style.overflow = '';
+            }
+            
+            // Function to disable scrolling
+            function disableScrolling() {
+                document.body.style.overflow = 'hidden';
+                document.documentElement.style.overflow = 'hidden';
+            }
+            
+            if(mobileToggle && navLinks) {
+                mobileToggle.addEventListener('click', function(){
+                    navLinks.classList.toggle('active');
+                    if(navLinks.classList.contains('active')) {
+                        // Force hidden overflow on both menu and body to prevent any scrolling
+                        navLinks.style.overflowY = 'hidden';
+                        disableScrolling();
+                    } else {
+                        // Restore scrolling when menu is closed
+                        navLinks.style.overflowY = 'auto';
+                        enableScrolling();
+                    }
+                });
+            }
+            
+            if(mobileClose && navLinks) {
+                mobileClose.addEventListener('click', function(){
+                    navLinks.classList.remove('active');
+                    // Restore scrolling when menu is closed via X button
+                    navLinks.style.overflowY = 'auto';
+                    enableScrolling();
+                });
+            }
+
+            // Protocols sub-menu toggling with refresh behavior
+            if (protocolsBtn && protocolsSubmenu && navLinks) {
+                protocolsBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Hide the main mobile menu and re-enable its overflow
+                    navLinks.classList.remove('active');
+                    navLinks.style.overflowY = 'auto';
+                    
+                    // Refresh protocols submenu: reset scroll and force reflow
+                    protocolsSubmenu.scrollTop = 0;
+                    protocolsSubmenu.classList.remove('active');
+                    void protocolsSubmenu.offsetWidth; // Force reflow
+                    protocolsSubmenu.classList.add('active');
+                    
+                    // Disable scrolling when submenu is open
+                    disableScrolling();
+                });
+            }
+            
+            if (protocolsCloseBtn && protocolsSubmenu) {
+                protocolsCloseBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    protocolsSubmenu.classList.remove('active');
+                    
+                    // Ensure scrolling is re-enabled
+                    enableScrolling();
+                });
+            }
+            
+            // Add click event listener to the document to close menus when clicking outside
+            document.addEventListener('click', function(e) {
+                // Check if click is outside the nav-links and protocols-submenu
+                if (navLinks && !navLinks.contains(e.target) && 
+                    !mobileToggle.contains(e.target) && 
+                    navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    enableScrolling();
+                }
+                
+                if (protocolsSubmenu && !protocolsSubmenu.contains(e.target) && 
+                    protocolsBtn && !protocolsBtn.contains(e.target) && 
+                    protocolsSubmenu.classList.contains('active')) {
+                    protocolsSubmenu.classList.remove('active');
+                    enableScrolling();
+                }
+            });
+            
+            // Also reset body overflow on page load, just in case
+            enableScrolling();
+        });
+    </script>
+    
+    <!-- Footer Section Start -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/VP-light-mj4eWhuns1EQndL0c8Fgu1arxZQgnt.png" alt="Vital Protocol Logo">
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="protocols.html">Protocols</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="patient-portal.html">Patient Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <ul>
+                        <li><a href="partner-pharmacy-faq.html">Partner Pharmacy FAQ</a></li>
+                        <li><a href="medical-provider-faq.html">Medical Provider FAQ</a></li>
+                        <li><a href="telehealth-consent.html">Telehealth Consent</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="help-center.html">Help Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <p>Email: <a href="mailto:support@vitalprotocol.co">support@vitalprotocol.co</a></p>
+                <p>Support: (908) 280-5268</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+</body>
+</html>
