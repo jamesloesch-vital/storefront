@@ -140,7 +140,11 @@ body {
     font-weight: 500;
     cursor: pointer;
     padding: 0;
-    color: #000;
+    color: #000 !important;
+}
+
+.faq-question span {
+    color: #000 !important;
 }
 
 .faq-answer {
@@ -412,7 +416,11 @@ sup {
     text-align: left;
     padding: 15px 20px;
     margin: 15px 0;
-    color: #000;
+    color: #000 !important;
+}
+
+.faq .faq-question span {
+    color: #000 !important;
 }
 
 .faq .faq-answer {
