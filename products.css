@@ -140,6 +140,7 @@ body {
     font-weight: 500;
     cursor: pointer;
     padding: 0;
+    color: #000;
 }
 
 .faq-answer {
@@ -411,6 +412,7 @@ sup {
     text-align: left;
     padding: 15px 20px;
     margin: 15px 0;
+    color: #000;
 }
 
 .faq .faq-answer {
