@@ -47,6 +47,17 @@
     src="https://www.facebook.com/tr?id=844702434477963&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
+
+    <!-- Facebook Button Tracking -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.cta, .cta-button, .nav-get-started-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          fbq('trackCustom', 'LPButtonClick', {button_text: btn.textContent});
+        });
+      });
+    });
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -65,7 +76,7 @@
             <a href="../about/index.html">About</a>
             <!-- <a href="blog.html">Blog</a> -->
             <a href="https://vitalprotocol.portal.tellescope.com/" class="sign-in">Sign in</a>
-            <a href="https://business.tellescope.com/e/public/form?f=67dafce966a8d4381697c7eb&businessId=67ab79f02cadd94416b434bb&nextFormId=&publicIdentifier=&customTypeId=&orgIds=&skipMatch=false&autoStart=false&sessionId=&" class="nav-get-started-btn">Get started</a>
+            <a href="https://business.tellescope.com/e/public/form?f=6807b3162f2cab1d079d2f46&businessId=67ab79f02cadd94416b434bb&nextFormId=&publicIdentifier=&customTypeId=&orgIds=&skipMatch=false&autoStart=false&sessionId=&" class="nav-get-started-btn">Get started</a>
         </div>
     </nav>
 
@@ -136,7 +147,7 @@
                     </div>
                 </div>
 
-                <a href="https://business.tellescope.com/e/public/form?f=67dafce966a8d4381697c7eb&businessId=67ab79f02cadd94416b434bb&nextFormId=&publicIdentifier=&customTypeId=&orgIds=&skipMatch=false&autoStart=false&sessionId=&">
+                <a href="https://business.tellescope.com/e/public/form?f=6807b3162f2cab1d079d2f46&businessId=67ab79f02cadd94416b434bb&nextFormId=&publicIdentifier=&customTypeId=&orgIds=&skipMatch=false&autoStart=false&sessionId=&">
                     <button class="cta-button">Get Started</button>
                 </a>
 
